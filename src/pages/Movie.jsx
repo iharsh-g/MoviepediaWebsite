@@ -127,7 +127,7 @@ function Movie() {
                                 <p className='mt-[2rem] text-[25px] italic genresShadow font-semibold'>{movieGenres.join(", ")}</p>
                             </div>
 
-                            <Iframe url={`http://www.youtube.com/embed/${key}`}
+                            <Iframe url={`https://www.youtube.com/embed/${key}`}
                              className='md:w-[400px] md:h-[220px] h-[200px] w-[300px] lg:-mt-[1rem] mt-5 rounded-xl shadow-[0_8px_30px_rgb(255,255,255,255)] place-self-center' />
                         </div>
 

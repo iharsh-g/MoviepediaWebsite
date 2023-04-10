@@ -20,7 +20,7 @@ function Search() {
   }
 
   function submitHandler(event) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && event.target.value !== "") {
       getSearchMovie(event.target.value);
     }
   }
@@ -34,13 +34,11 @@ function Search() {
         <input type='search' className='w-[100%] py-3 text-lg pl-[1rem] md:pl-[4rem] pr-[4rem] rounded-full outline-[#f00] border-[3px] border-[#f00]'
          placeholder='Search Movies...' onKeyDown={submitHandler}/>
 
-        <BsSearch className='text-black absolute right-7 top-4' fontSize={"1.5rem"}/>
-
         <div className='grid grid-cols-1 mx-10 sm:mx-[10rem] md:mx-0 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5'>
           {
             loading ? <div className='absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center'><Spinner/></div> :
             movies.map((movie) => 
-              <Card movie={movie} id={movie.id} search={true}/>
+              <Card movie={movie} key={movie.id} search={true}/>
             )
           }
         </div>
